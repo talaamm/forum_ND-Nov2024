@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration</title>
+ <link rel="stylesheet" href="./css/sign-in.css">
+</head>
+<body>
+<div>
+    <div class="backbtn">
+        <form action="/" id="jojo">
+          <input type="submit" value="Back" id="Back">
+        </form></div>
+</div>
+    <div class="container">
+        <!-- Toggle Buttons -->
+        <div class="toggle-btns">
+            <button class="toggle-btn active" onclick="showLogin()">Login</button>
+            <button class="toggle-btn" onclick="showRegister()">Register</button>
+        </div>
+        <!-- Login Form -->
+        <form id="loginForm" class="form active-form" action="/login" method="post" >
+            {{if .Success}}
+            <div class="success"> <pre>{{.Success}}</pre></div>
+            {{end}}
+            <h3>Login</h3>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            {{if .Error}}
+            <div class="error"> <pre>{{.Error}}</pre></div>
+            {{end}}
+            <input type="submit" value="Log In">
+        </form>
+        <!-- Registration Form -->
+        <form id="registerForm" class="form" action="/register" method="post">
+         
+            <h3>Register</h3>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            {{if .Error}}
+            <div class="error"> <pre>{{.Error}}</pre></div>
+            {{end}}
+            <input type="submit" value="Register">
+        </form>
+    </div>
+    <script>
+        // JavaScript to toggle between forms
+        function showLogin() {
+            document.getElementById('loginForm').classList.add('active-form');
+            document.getElementById('registerForm').classList.remove('active-form');
+            document.querySelectorAll('.toggle-btn')[0].classList.add('active');
+            document.querySelectorAll('.toggle-btn')[1].classList.remove('active');
+        }
+        function showRegister() {
+            document.getElementById('registerForm').classList.add('active-form');
+            document.getElementById('loginForm').classList.remove('active-form');
+            document.querySelectorAll('.toggle-btn')[1].classList.add('active');
+            document.querySelectorAll('.toggle-btn')[0].classList.remove('active');
+        }
+    
+    </script>
+    
+</body>
+</html>

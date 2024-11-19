@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONAMIES WEB-APP</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!-- Application Title and Login Button (login moved to the top-right) -->
+    <div class="header-container">
+        <h1>MONAMIES</h1>
+        <div class="login-button">
+            <form action="/sign-in">
+                <input type="submit" value="Log in">
+            </form>
+        </div>
+    </div>
+
+    <!-- Categories Section -->
+    <div class="categories-container">
+        <h1>Categories</h1>
+        <ul>
+            <li style="cursor: not-allowed" class="active">[All]</li>
+            <li style="cursor: not-allowed">[Tech]</li>
+            <li style="cursor: not-allowed">[Health]</li>
+            <li style="cursor: not-allowed">[LifeStyle]</li>
+            <li style="cursor: not-allowed">[Education]</li>
+        </ul>
+    </div>
+    
+    {{range .AllPosts}}
+    <div class="post-container">
+        <div class="post-header">
+            <a href="" class="post-title" style="cursor: not-allowed">{{.Title}}</a>
+            <h2 class="post-username">{{.Username}}</h2>
+        </div>
+        <div class="post-actions">
+            <span>👍 200 Likes</span>
+            <span class="comments" style="cursor: not-allowed">💬 45 Comments</span>
+        </div>
+    </div>
+    {{end}}
+
+    <!-- Log in encouragement block -->
+    <div class="login-encouragement">
+        <pre>If you want to see more posts, comments, and more,
+          LOG-IN!</pre>
+    </div>
+</body>
+</html>

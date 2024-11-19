@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONAMIES WEB-APP</title>
+    <link rel="stylesheet" href="./css/myhome.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header-container">
+        <h1>MONAMIES</h1>
+        <div class="user-actions">
+            <h2>{{.User}}</h2>    
+            <form action="/log-out" method="post">
+                <input type="submit" value="Log Out">
+            </form>
+            <form action="/create-a-post" method="post">
+                <input type="submit" value="Create a Post">
+            </form>
+            <form action="/my-posts" method="post">
+                <input type="submit" value="My Posts">
+            </form>
+        </div>
+        
+    </div>
+    <!-- Categories Section -->
+    <div class="categories-container">
+        <h1>Categories</h1>
+        <ul>
+            <li><a href="/category/All">[All]</a></li>
+            <li><a href="/category/Tech">[Tech]</a></li>
+            <li><a href="/category/Health">[Health]</a></li>
+            <li><a href="/category/Lifestyle">[Lifestyle]</a></li>
+            <li><a href="/category/Education">[Education]</a></li>
+        </ul>
+    </div>
+    
+    {{if .AllPosts}}
+    {{range .AllPosts}}
+    <div class="post-container">
+        <div class="post-header">
+            <a href="/posted/{{.PostId}}" class="post-title">{{.Title}}</a>
+            <h2 class="post-username">{{.Username}}</h2>
+        </div>
+        <div class="post-actions">
+          
+            <span>👍Likes {{.LikeCount}} </span>
+            <span>👎DisLikes {{.DisLikeCount}} </span>
+            <span class="comments" >💬{{.CommentCount}} Comments</span>
+        </div>
+    </div>
+{{end}}
+{{else}}
+    <div class="no-posts">
+        <p>No Posts Yet...</p>
+    </div>
+{{end}}
+
+</body>
+</html>

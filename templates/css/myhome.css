@@ -1,0 +1,176 @@
+
+        /* Reset default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            padding: 20px;
+            position: relative;
+        }
+        /* Header container for title and user actions */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        /* Application title styling */
+        .header-container h1 {
+            font-size: 32px;
+        }
+        /* User actions container */
+        .user-actions {
+            display: flex;
+            align-items: center;
+        }
+        .user-actions h2 {
+            margin-right: 20px;
+            font-size: 18px;
+        }
+        .user-actions span {
+            margin-left: 15px;
+            font-size: 16px;
+            cursor: default;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+        .user-actions span:hover {
+            color: #dcdcdc;
+        }
+        /* Categories section styling */
+        .categories-container {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+        }
+        .categories-container h1 {
+            font-size: 22px;
+            margin-right: 20px;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+        }
+        ul li {
+            margin-right: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 5px 10px;
+            transition: color 0.3s ease;
+        }
+        ul li:hover {
+            color: #007BFF;
+        }
+        ul li.active {
+            font-weight: bold;
+            color: #007BFF;
+        }
+        /* Post container styling */
+        .post-container {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+        .post-container:hover {
+            transform: translateY(-5px);
+        }
+        /* Username and post title styling */
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .post-title {
+            font-size: 20px;
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .post-title:hover {
+            text-decoration: underline;
+        }
+        .post-username {
+            font-size: 18px;
+            color: #333;
+        }
+        /* Post interaction buttons */
+        .post-actions {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 15px;
+        }
+        .post-actions span {
+            font-size: 16px;
+            color: #666;
+            cursor: default;
+            margin-right: 20px;
+        }
+        .post-actions span:hover {
+            color: #007BFF;
+        }
+        /* Pop-up for comments */
+        .comments-popup {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            z-index: 1000;
+        }
+        .comments-popup.active {
+            display: block;
+        }
+    
+    /* Styling for the submit buttons */
+.user-actions form {
+    margin-left: 10px;
+}
+.user-actions input[type="submit"] {
+    background-color: #fff;
+    color: #007BFF;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.user-actions input[type="submit"]:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
+.user-actions input[type="submit"]:active {
+    transform: scale(0.98);
+}
+    
+.no-posts{
+        margin-top: 50px; /* Space above the encouragement block */
+        padding: 50px;
+        background-color: #007bffb3; /* Use a color that matches the theme */
+        color: white;
+        border-radius: 8px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        font-size: 30px; /* Larger font for emphasis */
+opacity: 0.8;
+    }

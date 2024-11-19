@@ -1,0 +1,131 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    padding: 20px;
+    position: relative;
+}
+/* Log in encouragement block */
+.login-encouragement {
+    margin-top: 30px; /* Space above the encouragement block */
+    padding: 15px;
+    background-color: #007BFF; /* Use a color that matches the theme */
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 18px; /* Larger font for emphasis */
+}
+/* Centered header container */
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+/* Style for the application title */
+.header-container h1 {
+    font-size: 32px;
+    color: #333; /* Darker color for better contrast */
+}
+/* Style for the login button at top-right */
+.login-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 5px;
+cursor: pointer;
+  }
+input[type="submit"]:hover {
+    background-color: #007BFF; /* Keep the same color on hover */
+}
+/* Categories section */
+.categories-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+ul {
+    list-style: none;
+    display: flex;
+}
+ul li {
+    margin-right: 20px;
+    font-size: 18px;
+    cursor: not-allowed; /* Changes cursor to indicate the link is unclickable */
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+    opacity: 0.5; /* Make the links appear disabled */
+}
+ul li:hover {
+    color: #007BFF; /* Keep hover effect, but it won't work */
+}
+ul li.active {
+    font-weight: bold;
+    color: #007BFF;
+}
+/* Post container styling */
+.post-container {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+.post-container:hover {
+    transform: translateY(-5px);
+}
+/* Username and post title styling */
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.post-title {
+    font-size: 20px;
+    color: #007BFF;
+    text-decoration: none;
+}
+.post-title:hover {
+    text-decoration: underline;
+}
+.post-username {
+    font-size: 18px;
+    color: #333;
+}
+/* Post interaction buttons */
+.post-actions {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 15px;
+}
+.post-actions span {
+    font-size: 16px;
+    color: #666;
+    cursor: not-allowed; /* Changes cursor to indicate the link is unclickable */
+    margin-right: 20px;
+    opacity: 0.5; /* Make the text appear disabled */
+}
+.post-actions span:hover {
+    color: #007BFF; /* Keep hover effect, but it won't work */
+}

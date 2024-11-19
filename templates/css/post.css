@@ -1,0 +1,251 @@
+
+form {
+    display: flex;
+    justify-content: flex-end; /* Center the form */
+   margin-right: 100px;
+    margin-bottom: 20px; /* Space below the form */
+}
+
+.comments-section {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 2px solid #e0e0e0;
+      }
+
+      .comments-title {
+        font-size: 20px;
+        color: #333333;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+
+      .comment {
+        padding: 10px 15px;
+        margin-bottom: 15px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      .comment-user {
+        font-weight: bold;
+        color: #007BFF;
+        display: inline-block;
+        margin-bottom: 5px;
+      }
+
+      .comment-text {
+        font-size: 14px;
+        color: #555555;
+      }
+
+      /* Add Comment Form */
+      .add-comment-title {
+        font-size: 18px;
+        color: #333333;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      textarea {
+        width: 100%;
+        padding: 15px;
+        font-size: 14px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        resize: none;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      textarea:focus {
+        border-color: #007BFF;
+        outline: none;
+      }
+
+      input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+
+      /* Improved comment box design */
+      .comment-box {
+        margin-top: 20px;
+      }
+
+      #backbtn {
+    background-color: #007BFF; /* Match the theme's blue color */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* Remove borders */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Match the post content font size */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+#backbtn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+      }
+      .post-container {
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      h1.post-title {
+        font-size: 26px;
+        color: #333333;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #007BFF;
+        padding-bottom: 5px;
+      }
+      h2 {
+        font-size: 14px;
+        color: #777777;
+        margin: 5px 0;
+      }
+      h2.user-info,
+      h2.post-date {
+        font-weight: 400;
+      }
+      .post-content {
+    font-size: 16px;
+    color: #444444;
+    margin: 15px 0;
+    overflow: auto; /* Allows for scrolling if content is too long */
+}
+
+.post-content pre {
+    white-space: pre-wrap; /* Wraps the text to fit the container */
+    word-wrap: break-word; /* Breaks long words if necessary */
+    overflow: auto; /* Adds scrollbars if the content is too long */
+    max-width: 100%; /* Ensures it doesn't exceed the width of the container */
+}
+      .post-meta {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #555555;
+        border-top: 1px solid #e0e0e0;
+        padding-top: 10px;
+      }
+      .post-meta b {
+        color: #333333;
+      }
+      /* Comment section CSS */
+      .comments-section {
+        margin-top: 20px;
+      }
+      .comments-title {
+        font-size: 18px;
+        color: #333333;
+        margin-bottom: 10px;
+      }
+      .comment {
+        border-left: 4px solid #007BFF;
+        padding-left: 15px;
+        margin-bottom: 15px;
+      }
+      .comment-user {
+        font-weight: bold;
+        color: #007BFF;
+        margin-bottom: 5px;
+        display: inline-block;
+      }
+      .comment-text {
+        font-size: 14px;
+        color: #555555;
+        background-color: #f1f1f1;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+/* Comment form */
+.comment-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.comment-box textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.comment-box textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.comment-box input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.comment-box input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.backbtn {
+  display: flex;
+  justify-content: flex-end; /* Align the form to the right */
+  margin-bottom: 20px;
+}
+.backbtn form {
+  margin-right: 100px; /* Adjust the right margin if needed */
+}
+.backbtn input[type="submit"] {
+  background-color: #007BFF; /* Match the theme's blue color */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding for the button */
+  border: none; /* Remove borders */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Match the post content font size */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Post</title>
+    <link rel="stylesheet" href="./css/create.css">
+ </head>
+<body>
+    <div class="backbtn">
+        <form action="/home" id="jojo">
+          <input type="submit" value="Back" id="Back">
+        </form></div>
+    <div class="container">
+        <h1>Create a Post</h1>
+        <!-- Username Display -->
+        <div>
+            <label>Username:</label>
+            <input type="text" id="username" value="{{.Username}}" readonly>
+        </div>
+        <form action="/posted" method="post" enctype="multipart/form-data">
+        <!-- Time Display -->
+        <div>
+            <label>Post Creation Time:</label>
+            <input type="text" id="postTime" name="postTime" value="{{.DateNow}}" readonly>
+        </div>
+        <!-- Title Input -->
+        <div>
+            <label for="postTitle">Title of Post:</label>
+            <input type="text" id="postTitle" name="postTitle" placeholder="Enter post title">
+        </div>
+        <!-- Category Selection -->
+        <div>
+            <label for="postCategory">Category:</label>
+            <select id="postCategory" name="postCategory">
+                <option value="Tech">Tech</option>
+                <option value="Health">Health</option>
+                <option value="Lifestyle">Lifestyle</option>
+                <option value="Education">Education</option>
+            </select>
+        </div>
+        <!-- Post Content Textarea -->
+        <div>
+            <label for="postContent">Post Content:</label>
+      <textarea id="postContent" name="postContent" placeholder="Write your post here...">Write your post here... </textarea>   </div>
+      
+         <!-- Image Upload -->
+         <div>
+            <label for="postImage">Upload an Image (JPEG, PNG, GIF):</label>
+            <input type="file" id="postImage" name="postImage">
+        </div>
+        {{if .Err}}
+        <div class="error"> {{.Err}}</div>
+        {{end}}
+      <!-- Submit Button -->
+        <input type="submit" value="Post"></form>
+    </div>
+   
+</body>
+</html>

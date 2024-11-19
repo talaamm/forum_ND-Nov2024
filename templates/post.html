@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONAMIES - POST</title>
+
+     <style>/* General Body and Container Styles */
+      body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: #f0f0f0;
+          margin: 0;
+          padding: 20px;
+      }
+      
+      .post-container {
+          background-color: #ffffff;
+          border-radius: 10px;
+          padding: 20px;
+          max-width: 600px;
+          margin: 0 auto;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* Post Title and Metadata */
+      h1.post-title {
+          font-size: 26px;
+          color: #333333;
+          margin-bottom: 10px;
+          border-bottom: 2px solid #007BFF;
+          padding-bottom: 5px;
+      }
+      
+      h2 {
+          font-size: 14px;
+          color: #777777;
+          margin: 5px 0;
+      }
+      
+      h2.user-info,
+      h2.post-date {
+          font-weight: 400;
+      }
+      
+      /* Post Content */
+      .post-content {
+          font-size: 16px;
+          color: #444444;
+          margin: 15px 0;
+          overflow: auto; /* Allows scrolling for long content */
+      }
+      
+      .post-content pre {
+          white-space: pre-wrap;
+          word-wrap: break-word;
+          overflow: auto;
+          max-width: 100%;
+      }
+      
+      /* Post Meta: Like and Dislike Buttons */
+      .post-meta {
+          display: flex;
+          /* justify-content: space-between; */
+          font-size: 14px;
+          color: #555555;
+          border-top: 1px solid #e0e0e0;
+          padding-top: 10px;
+      }
+      
+      .post-meta form button {
+          padding: 8px 12px;
+          background-color: #007BFF;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 14px;
+          margin-right: 5px;
+          transition: background-color 0.3s ease;
+      }
+      
+      .post-meta form button:hover {
+          background-color: #0056b3;
+      }
+      
+      .post-meta span {
+          /* margin-left: 10px; */
+          font-size: 14px;
+          color: #444;
+      }
+      
+      /* Comments Section */
+      .comments-section {
+          margin-top: 30px;
+          padding-top: 20px;
+          border-top: 2px solid #e0e0e0;
+      }
+      
+      .comments-title {
+          font-size: 20px;
+          color: #333333;
+          margin-bottom: 15px;
+          font-weight: bold;
+      }
+      
+      .comment {
+          padding: 10px 15px;
+          margin-bottom: 15px;
+          background-color: #f9f9f9;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+      
+      .comment-user {
+          font-weight: bold;
+          color: #007BFF;
+          display: inline-block;
+          margin-bottom: 5px;
+      }
+      
+      .comment-text {
+          font-size: 14px;
+          color: #555555;
+      }
+      
+      /* Comment Box */
+      .comment-box {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          background-color: #fff;
+          padding: 15px;
+          border-radius: 5px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          margin-top: 20px;
+          width: 100%;
+          box-sizing: border-box;
+      }
+      
+      .comment-box textarea {
+          width: 100%;
+          padding: 10px;
+          font-size: 14px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          resize: none;
+          box-sizing: border-box;
+          box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      
+      .comment-box textarea:focus {
+          border-color: #007BFF;
+          outline: none;
+      }
+      
+      .comment-box input[type="submit"] {
+          padding: 10px 20px;
+          background-color: #007BFF;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+          transition: background-color 0.3s ease;
+      }
+      
+      .comment-box input[type="submit"]:hover {
+          background-color: #0056b3;
+      }
+      
+      /* Back Button */
+      .backbtn {
+            display: flex;
+            justify-content: flex-end; /* Align the form to the right */
+            margin-bottom: 20px;
+        }
+        .backbtn form {
+            margin-right: 100px; /* Adjust the right margin if needed */
+        }
+        .backbtn input[type="submit"] {
+            background-color: #007BFF; /* Match the theme's blue color */
+            color: white; /* White text */
+            padding: 10px 20px; /* Padding for the button */
+            border: none; /* Remove borders */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 16px; /* Match the post content font size */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+        }
+
+      .backbtn input[type="submit"]:hover {
+          background-color: #0056b3;
+      }
+      </style>
+  
+    </head>
+
+<body>
+  <div class="backbtn">
+      <form id="backbtn-form" action="/home">
+          <input type="submit" value="Back" id="backbtn">
+      </form>
+  </div>
+
+  <div class="post-container">
+      <h1 class="post-title">{{.Thepost.Title}}</h1>
+      <h2 class="user-info">User: {{.Thepost.Username}}</h2>
+      <h2 class="post-date">Date: {{.Thepost.Posttime}}</h2>
+      <h2 class="post-date">Category: {{.Thepost.Categ}}</h2>
+      <div class="post-content">
+          <h3>Content of Post</h3>
+          <pre>{{.Thepost.Content}}</pre>
+      </div>
+
+      {{if .Thepost.ImagePath}}
+      <div class="post-image">
+          <img src="/{{.Thepost.ImagePath}}" alt="Post Image" style="max-width: 100%; height: auto;">
+      </div>
+      {{end}}
+
+      <div class="post-meta">
+          <form action="/like" method="POST" style="display: inline;">
+              <input type="hidden" name="post_id" value="{{.Thepost.PostID}}">
+              <input type="hidden" name="like" value="true">
+              <button type="submit">👍 Like  {{.Thepost.LikeCount}}</button>
+          </form>
+          <form action="/like" method="POST" style="display: inline;">
+              <input type="hidden" name="post_id" value="{{.Thepost.PostID}}">
+              <input type="hidden" name="like" value="false">
+              <button type="submit">👎 Dislike {{.Thepost.DisLikeCount}}</button>
+          </form>
+      </div>
+
+      <div class="comments-section">
+          <h3 class="comments-title">Comments ({{.Thepost.CommentCount}})</h3>
+          {{if .Cmnts}}
+              {{range .Cmnts}}
+              <div class="comment">
+                  <pre><span class="comment-user">   {{.Username}}</span></pre>
+                  <div class="comment-text">{{.Content}}</div>
+              </div>
+              {{end}}
+          {{else}}
+              <div class="no-comments">No comments available for this post.</div>
+          {{end}}
+
+          <div class="comment-box">
+              <h3 class="add-comment-title">Add a Comment</h3>
+              <form id="commentForm" method="post" action="/submit-comment/{{.Thepost.PostID}}">
+                  <textarea name="comment" placeholder="Write your comment here..."></textarea>
+                  <input type="submit" value="Submit Comment">
+                  <input type="hidden" name="postID" value="{{.Thepost.PostID}}">
+              </form>
+          </div>
+      </div>
+  </div>
+</body>
+</html>

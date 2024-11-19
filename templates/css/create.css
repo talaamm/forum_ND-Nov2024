@@ -1,0 +1,118 @@
+       body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+    }
+    .container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: auto;
+    }
+    h1 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+    input[type="text"],
+    textarea,
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+    textarea {
+        height: 150px;
+    }
+    input[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    .hidden {
+        display: none;
+    }
+
+    .backbtn {
+        display: flex;
+        justify-content: flex-end; /* Align the form to the right */
+        margin-bottom: 20px;
+    }
+    .backbtn form {
+        margin-right: 100px; /* Adjust the right margin if needed */
+    }
+    .backbtn input[type="submit"] {
+        background-color: #007BFF; /* Match the theme's blue color */
+        color: white; /* White text */
+        padding: 10px 20px; /* Padding for the button */
+        border: none; /* Remove borders */
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        font-size: 16px; /* Match the post content font size */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    }
+
+    input[type="file"] {
+        display: block; /* Ensure it takes up space like other inputs */
+        padding: 10px; /* Padding to match other input fields */
+        font-size: 14px; /* Font size to align with the theme */
+        color: #555; /* Neutral text color */
+        background-color: #f9f9f9; /* Light background */
+        border: 1px solid #ddd; /* Match other input borders */
+        border-radius: 4px; /* Rounded corners */
+        width: 100%; /* Full width like other input fields */
+        margin-bottom: 20px; /* Consistent spacing with other fields */
+        cursor: pointer; /* Indicate it's clickable */
+    }
+    
+    input[type="file"]:hover {
+        background-color: #f1f1f1; /* Slightly darker on hover */
+        border-color: #bbb; /* Slightly darker border on hover */
+    }
+    
+    input[type="file"]::file-selector-button {
+        background-color: #007BFF; /* Theme blue button */
+        color: white; /* White text for contrast */
+        padding: 8px 12px; /* Padding for the button */
+        border: none; /* No border */
+        border-radius: 4px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor for clarity */
+        font-size: 14px; /* Match input font size */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Depth for button */
+    }
+    
+    input[type="file"]::file-selector-button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+    
+
+
+    .error {
+        color: black;
+        background-color: #dc354529;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+        font-size: 14px;
+        text-align: center;
+        font-weight: bold;
+        border: 1px solid #dc3545;
+    }
